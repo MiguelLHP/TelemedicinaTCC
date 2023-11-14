@@ -1,0 +1,58 @@
+﻿@page
+@model Telemedicina_TCC.Areas.Identity.Pages.Atendimento.ChatAtendimentoModel
+@inject UserManager<ApplicationUser> UserManager
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<span hidden id="idAtendimento">@Request.Query["id"]</span>
+<span id="loggedUser" hidden>@UserManager.GetUserAsync(User).Result.Name</span>
+<span id="userID" hidden>@UserManager.GetUserAsync(User).Result.Id</span>
+<span id="pacientName" hidden>@(Model.Atendimento == null ? "" : Model.Atendimento.Pacient.Name)</span>
+<span id="doctorName" hidden>@(Model.Atendimento == null ? "" : Model.Atendimento.Doctor.Name)</span>
+
+<h1>Atendimento: @(Model.Atendimento == null ? "" : Model.Atendimento.Pacient.Name)</h1>
+@if (@UserManager.GetClaimsAsync(UserManager.GetUserAsync(User).Result).Result.FirstOrDefault().Type != "CPF")
+{
+    <div class="container" style="background-color: white; padding: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h4>Resultado Triagem:</h4>
+        <div class="row">
+            <div class="col-2">
+                <span class="badge rounded-pill text-bg-primary">Alergia:</span> @(Model.Atendimento == null ? "" : Model.Triagem.Alergia == true ? "Sim" : "Não")
+            </div>
+            <div class="col-2">
+                <span class="badge rounded-pill text-bg-primary">Doença Cronica:</span> @(Model.Atendimento == null ? "" : Model.Triagem.DoencaCronica == true ? "Sim" : "Não")
+            </div>
+            <div class="col-2">
+                <span class="badge rounded-pill text-bg-primary">Diabetes:</span> @(Model.Atendimento == null ? "" : Model.Triagem.Diabetes == true ? "Sim" : "Não")
+            </div>
+            <div class="col-2">
+                <span class="badge rounded-pill text-bg-primary">Pressão:</span> @(Model.Atendimento == null ? "" : Model.Triagem.Pressao)
+            </div>
+            <div class="col-3">
+                <span class="badge rounded-pill text-bg-primary">Problemas Respiratórios:</span> @(Model.Atendimento == null ? "" : Model.Triagem.ProblemaRespiratorio == true ? "Sim" : "Não")
+            </div>
+            <div class="col-2">
+                <span class="badge rounded-pill text-bg-primary">Peso:</span> @(Model.Atendimento == null ? "" : Model.Triagem.Peso)
+            </div>
+            <div class="col-2">
+                <span class="badge rounded-pill text-bg-primary">Temperatura:</span> @(Model.Atendimento == null ? "" : Model.Triagem.Temperatura)
+            </div>
+        </div>
+    </div>
+}
+
+<partial name="~/Views/Shared/_ChatAtendimento.cshtml" />
+
+@if (@UserManager.GetClaimsAsync(UserManager.GetUserAsync(User).Result).Result.FirstOrDefault().Type != "CPF")
+{
+    <div class="container" style="background-color: white; padding: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <div class="row">
+            <div class="col-10">
+                <input type="text" id="resultado" placeholder="Digite o resultado do atendimento..." class="form-control">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary" id="btn-closeAtendimento" onclick="closeAtendimento()">Finalizar Atendimento</button>
+            </div>
+        </div>
+    </div>
+}

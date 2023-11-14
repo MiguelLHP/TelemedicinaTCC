@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Telemedicina_TCC.Areas.Identity.Data;
+@inject UserManager<ApplicationUser> UserManager
+
+<span id="user" hidden>@UserManager.GetUserAsync(User).Result.Name</span>
+<span id="userID" hidden>@UserManager.GetUserAsync(User).Result.Id</span>
+<div id="chat-container">
+    <div id="chat-box" class="container"></div>
+    <div id="input-container">
+        <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+        <button id="sendButton">Enviar</button>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chatTriagem.js"></script>

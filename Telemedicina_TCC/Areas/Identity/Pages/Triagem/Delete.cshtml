@@ -1,0 +1,71 @@
+﻿@page
+@model Telemedicina_TCC.Areas.Identity.Pages.Triagem.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Tem certeza de que deseja excluir isto?</h3>
+<div>
+    <h4>Triagens</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triagens.Alergia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triagens.Alergia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triagens.DoencaCronica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triagens.DoencaCronica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triagens.Diabetes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triagens.Diabetes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triagens.Pressao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triagens.Pressao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triagens.ProblemaRespiratorio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triagens.ProblemaRespiratorio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triagens.Peso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triagens.Peso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triagens.Temperatura)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triagens.Temperatura)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Triagens.Created)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Triagens.Created)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Triagens.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Voltar a lista</a>
+    </form>
+</div>

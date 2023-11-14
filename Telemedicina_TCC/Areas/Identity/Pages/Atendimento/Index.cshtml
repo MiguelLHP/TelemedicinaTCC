@@ -1,0 +1,62 @@
+﻿@page
+@model Telemedicina_TCC.Views.Atendimento.IndexModel
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Atendimentos</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Atendimentos[0].Pacient.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Atendimentos[0].Resultado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Atendimentos[0].DataHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Atendimentos[0].StatusAtendimento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Atendimentos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pacient.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resultado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataHora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusAtendimento)
+                </td>
+                <td>
+                    @if (UserManager.GetClaimsAsync(UserManager.GetUserAsync(User).Result).Result.FirstOrDefault().Type == "ADMINCODE" || UserManager.GetClaimsAsync(UserManager.GetUserAsync(User).Result).Result.FirstOrDefault().Type == "CRM")
+                    {
+                        <a asp-page="./ChatAtendimento" asp-route-id="@item.ID" asp-route-user="@UserManager.GetUserAsync(User).Result.Id">Iniciar Atendimento</a>
+                    }else{
+                        @if(item.StatusAtendimento == Telemedicina_TCC.Models.EStatusAtendimento.EmAtendimento)
+                        {
+                            <a asp-page="./ChatAtendimento" asp-route-id="@item.ID" asp-route-user="null">Entrar no Atendimento</a>
+                        }
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

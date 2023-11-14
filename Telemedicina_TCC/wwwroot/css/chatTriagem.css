@@ -1,0 +1,57 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#chat-container {
+    max-width: 100%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-box {
+    height: 100%;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#input-container {
+    display: flex;
+}
+
+#message-input {
+    flex-grow: 2;
+    padding: 8px;
+}
+
+#send-button {
+    padding: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#Enfermeira {
+    align-self: flex-start;
+    background-color: rgb(250, 250, 210, 0.5);
+    width:100%;
+
+}
+
+#usuario {
+    align-self: flex-end;
+    text-align: right;
+    background-color: rgb(224, 255, 215, 0.5);
+    width: 100%;
+}
+
+

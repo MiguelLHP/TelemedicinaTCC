@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Telemedicina_TCC.props" />
+</Project>
