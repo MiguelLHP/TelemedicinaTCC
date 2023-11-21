@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gBSu6lduTA1R/LeEU5pCKE0pYoLdz5fLBfMYbOAfaQo=",
+  "Hash": "mfJVBdPwE+KwHWtoK2Gqj2xiJoB3+pKVd/K+/5fn2TY=",
   "Source": "Telemedicina_TCC",
   "BasePath": "_content/Telemedicina_TCC",
   "Mode": "Default",
@@ -1105,6 +1105,23 @@
       "OriginalItemSpec": "wwwroot\\css\\chatTriagem.css"
     },
     {
+      "Identity": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\css\\MeetAtendimento.css",
+      "SourceId": "Telemedicina_TCC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\",
+      "BasePath": "_content/Telemedicina_TCC",
+      "RelativePath": "css/MeetAtendimento.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\MeetAtendimento.css"
+    },
+    {
       "Identity": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\css\\site.css",
       "SourceId": "Telemedicina_TCC",
       "SourceType": "Discovered",
@@ -1171,6 +1188,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\chatTriagem.js"
+    },
+    {
+      "Identity": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\js\\MeetAtendimento.js",
+      "SourceId": "Telemedicina_TCC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\",
+      "BasePath": "_content/Telemedicina_TCC",
+      "RelativePath": "js/MeetAtendimento.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\MeetAtendimento.js"
     },
     {
       "Identity": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\js\\registerPage.js",

@@ -4,11 +4,12 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<span hidden id="idAtendimento">@Request.Query["id"]</span>
+<span hidden id="idAtendimento">@Request.Query["idAtendimento"]</span>
 <span id="loggedUser" hidden>@UserManager.GetUserAsync(User).Result.Name</span>
 <span id="userID" hidden>@UserManager.GetUserAsync(User).Result.Id</span>
 <span id="pacientName" hidden>@(Model.Atendimento == null ? "" : Model.Atendimento.Pacient.Name)</span>
 <span id="doctorName" hidden>@(Model.Atendimento == null ? "" : Model.Atendimento.Doctor.Name)</span>
+<span id="roomId">@(Request.Query["idRoom"] == "null" ? Model.roomID : Request.Query["idRoom"])</span>
 
 <h1>Atendimento: @(Model.Atendimento == null ? "" : Model.Atendimento.Pacient.Name)</h1>
 @if (@UserManager.GetClaimsAsync(UserManager.GetUserAsync(User).Result).Result.FirstOrDefault().Type != "CPF")
@@ -41,7 +42,7 @@
     </div>
 }
 
-<partial name="~/Views/Shared/_ChatAtendimento.cshtml" />
+<partial name="~/Views/Shared/_MeetAtendimento.cshtml" />
 
 @if (@UserManager.GetClaimsAsync(UserManager.GetUserAsync(User).Result).Result.FirstOrDefault().Type != "CPF")
 {

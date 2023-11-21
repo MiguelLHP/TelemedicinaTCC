@@ -47,11 +47,11 @@
                 <td>
                     @if (UserManager.GetClaimsAsync(UserManager.GetUserAsync(User).Result).Result.FirstOrDefault().Type == "ADMINCODE" || UserManager.GetClaimsAsync(UserManager.GetUserAsync(User).Result).Result.FirstOrDefault().Type == "CRM")
                     {
-                        <a asp-page="./ChatAtendimento" asp-route-id="@item.ID" asp-route-user="@UserManager.GetUserAsync(User).Result.Id">Iniciar Atendimento</a>
+                        <a asp-page="./ChatAtendimento" asp-route-idAtendimento="@item.ID" asp-route-user="@UserManager.GetUserAsync(User).Result.Id" asp-route-idRoom="null">Iniciar Atendimento</a>
                     }else{
                         @if(item.StatusAtendimento == Telemedicina_TCC.Models.EStatusAtendimento.EmAtendimento)
                         {
-                            <a asp-page="./ChatAtendimento" asp-route-id="@item.ID" asp-route-user="null">Entrar no Atendimento</a>
+                            <a asp-page="./ChatAtendimento" asp-route-idAtendimento="@item.ID" asp-route-user="null" asp-route-idRoom="@item.ConnectionID">Entrar no Atendimento</a>
                         }
                     }
 

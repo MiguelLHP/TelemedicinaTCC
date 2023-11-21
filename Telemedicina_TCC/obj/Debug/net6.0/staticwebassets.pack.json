@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Telemedicina_TCC.bundle.scp.css"
     },
     {
+      "Id": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\css\\MeetAtendimento.css",
+      "PackagePath": "staticwebassets\\css\\MeetAtendimento.css"
+    },
+    {
       "Id": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\css\\chatAtendimento.css",
       "PackagePath": "staticwebassets\\css\\chatAtendimento.css"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\js\\MeetAtendimento.js",
+      "PackagePath": "staticwebassets\\js\\MeetAtendimento.js"
     },
     {
       "Id": "D:\\Users\\gabri\\Source\\Repos\\Telemedicina_TCC\\Telemedicina_TCC\\wwwroot\\js\\chatAtendimento.js",

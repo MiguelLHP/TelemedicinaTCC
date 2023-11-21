@@ -25,15 +25,18 @@ namespace Telemedicina_TCC.Areas.Identity.Pages.Atendimento
         public string idUser { get; set; }
         public Triagens Triagem { get; set; } = default!;
         public Atendimentos Atendimento { get; set; } = default!;
-        public async Task OnGetAsync()
+        public Guid roomID { get; set; } = Guid.NewGuid();
+        public async Task OnGetAsync(string roomId)
         {
-            idAtendimento = Request.Query["id"];
+            idAtendimento = Request.Query["idAtendimento"];
             idUser = Request.Query["user"];
-
-            if(idUser != null)
+            roomId = Request.Query["idRoom"];
+            if (idUser != null && roomId == "null")
             {
+                roomId = roomID.ToString();
                 var atendimento = _dbContext.Atendimentos.Where(x => x.ID == new Guid(idAtendimento)).FirstOrDefault();
                 atendimento.StatusAtendimento = EStatusAtendimento.EmAtendimento;
+                atendimento.ConnectionID = roomID.ToString();
                 atendimento.Doctor = _userManager.Users.FirstOrDefault(x => x.Id == idUser);
 
                 _dbContext.Atendimentos.Update(atendimento);
